@@ -573,7 +573,7 @@ page("404.html", "Seite nicht gefunden | Kompassordner", "Diese Seite gibt es ni
 """)
 
 # ---------------------------------------------------------------- Technik
-open("CNAME", "w").write("www.kompassordner.de\n")
+# open("CNAME", "w").write("www.kompassordner.de\n")  # aktivieren, sobald DNS bei IONOS umgestellt ist
 open("robots.txt", "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
 today = datetime.date.today().isoformat()
 pages = ["", "produkte.html", "so-funktioniert-es.html", "ueber.html", "kontakt.html", "impressum.html", "datenschutz.html", "widerruf-agb.html"]
