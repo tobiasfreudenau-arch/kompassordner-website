@@ -143,13 +143,13 @@ index_body = f"""
     <p class="lead">Weitere folgen: Rentenstart, Todesfall-Checkliste, Widerspruchs-Kits für Pflegegrad und Schwerbehinderung.</p>
     <div class="grid grid--2" style="margin-top:32px">
       <article>
-        <a href="produkte.html#notfallordner" aria-label="Zum Notfall- und Vorsorgeordner"><img class="doc" src="assets/img/notfall-cover.webp" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" loading="lazy" style="max-width:360px"></a>
+        <a class="shelf" style="display:block;max-width:420px" href="produkte.html#notfallordner" aria-label="Zum Notfall- und Vorsorgeordner"><img class="doc" src="assets/img/notfall-cover.webp" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#notfallordner">Notfall- und Vorsorgeordner</a></h3>
         <p>36 Seiten in 9 Teilen: Notfallblatt, Vollmachten, Finanzen, Verträge, digitaler Nachlass, Checklisten für den Todesfall, persönliche Botschaft.</p>
         <p class="tnum"><strong>19,90 €</strong> <span class="soft">Einführungspreis · regulär 24,90 €</span></p>
       </article>
       <article>
-        <a href="produkte.html#pflegeordner" aria-label="Zum Pflegeordner"><img class="doc" src="assets/img/pflege-cover.webp" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy" style="max-width:360px"></a>
+        <a class="shelf" style="display:block;max-width:420px" href="produkte.html#pflegeordner" aria-label="Zum Pflegeordner"><img class="doc" src="assets/img/pflege-cover.webp" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#pflegeordner">Pflegeordner für Angehörige</a></h3>
         <p>44 Seiten in 8 Teilen: Pflegegrad beantragen, Pflegetagebuch, Leistungen der Pflegekasse 2026, Wochenplan, Übergabeblatt, Protokolle, Finanzen.</p>
         <p class="tnum"><strong>12,90 €</strong> <span class="soft">Einführungspreis · regulär 14,90 €</span></p>
@@ -229,7 +229,7 @@ produkte_body = f"""
 
     <article class="product" id="notfallordner">
       <div class="grid grid--5-7">
-        <figure>
+        <figure class="shelf">
           <img class="doc" src="assets/img/notfall-cover.webp" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287">
           <div class="thumbs">
             <img src="assets/img/notfall-s04.webp" alt="Seite 4: Notfallblatt mit Feldern für Kontakte, Medikamente und Vorsorgedokumente" width="910" height="1287" loading="lazy">
@@ -258,7 +258,7 @@ produkte_body = f"""
 
     <article class="product" id="pflegeordner">
       <div class="grid grid--5-7">
-        <figure>
+        <figure class="shelf">
           <img class="doc" src="assets/img/pflege-cover.webp" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy">
           <div class="thumbs">
             <img src="assets/img/pflege-s04.webp" alt="Seite 4: Pflege-Notfallblatt mit Kontakten und Hauptpflegeperson" width="910" height="1287" loading="lazy">
@@ -557,7 +557,7 @@ page("404.html", "Seite nicht gefunden | Kompassordner", "Diese Seite gibt es ni
 """)
 
 # ---------------------------------------------------------------- Technik
-# open("CNAME", "w").write("www.kompassordner.de\n")  # aktivieren, sobald DNS bei IONOS umgestellt ist
+open("CNAME", "w").write("www.kompassordner.de\n")
 open("robots.txt", "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
 today = datetime.date.today().isoformat()
 pages = ["", "produkte.html", "so-funktioniert-es.html", "ueber.html", "kontakt.html", "impressum.html", "datenschutz.html", "widerruf-agb.html"]
