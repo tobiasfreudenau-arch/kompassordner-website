@@ -10,6 +10,7 @@ MAIL_SHOP = "shop@kompassordner.de"
 MAIL_POST = "post@kompassordner.de"
 MAIL_LIZENZ = "lizenz@kompassordner.de"
 STAND = "11/2026"
+ASSET_V = "2"   # bei Asset-Änderungen hochzählen (umgeht Browser-Cache)
 YEAR = "2026"
 
 NAV = [("produkte.html", "Produkte"), ("so-funktioniert-es.html", "So funktioniert es"), ("ueber.html", "Über"), ("kontakt.html", "Kontakt")]
@@ -39,18 +40,18 @@ def page(path, title, desc, body, current=None, h1_in_body=True):
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/img/icon.svg?v={ASSET_V}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v={ASSET_V}">
+<link rel="preload" href="assets/fonts/Inter-Regular.woff2?v={ASSET_V}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Inter-SemiBold.woff2?v={ASSET_V}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css?v={ASSET_V}">
 <meta name="theme-color" content="#1F3A5F">
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/img/icon.svg" alt="" width="48" height="48"><span class="word">Kompass<span>ordner</span></span></a>
+    <a class="brand" href="index.html"><img src="assets/img/icon.svg?v={ASSET_V}" alt="" width="48" height="48"><span class="word">Kompass<span>ordner</span></span></a>
     <nav class="nav" aria-label="Hauptnavigation"><ul>{nav}</ul></nav>
   </div>
 </header>
@@ -61,7 +62,7 @@ def page(path, title, desc, body, current=None, h1_in_body=True):
   <div class="wrap">
     <div class="cols">
       <div>
-        <a class="brand" href="index.html"><img src="assets/img/icon.svg" alt="" width="40" height="40"><span class="word">Kompass<span>ordner</span></span></a>
+        <a class="brand" href="index.html"><img src="assets/img/icon.svg?v={ASSET_V}" alt="" width="40" height="40"><span class="word">Kompass<span>ordner</span></span></a>
         <p style="max-width:34ch;margin-top:16px">Ordner zum Ausfüllen und Ausdrucken für Notfall, Pflege, Rente und Nachlass. Für Familien, die vorbereitet sein wollen.</p>
       </div>
       <div>
@@ -113,8 +114,8 @@ index_body = f"""
     </div>
     <div class="hero-doc">
       <div class="doc-stack">
-        <img class="doc" src="assets/img/notfall-cover.webp" alt="Deckblatt des Notfall- und Vorsorgeordners: dunkelblaue Fläche mit dem Titel „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" fetchpriority="high">
-        <img class="doc" src="assets/img/notfall-s04.webp" alt="" width="910" height="1287" aria-hidden="true" loading="lazy">
+        <img class="doc" src="assets/img/notfall-cover.webp?v={ASSET_V}" alt="Deckblatt des Notfall- und Vorsorgeordners: dunkelblaue Fläche mit dem Titel „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" fetchpriority="high">
+        <img class="doc" src="assets/img/notfall-s04.webp?v={ASSET_V}" alt="" width="910" height="1287" aria-hidden="true" loading="lazy">
       </div>
     </div>
   </div>
@@ -143,13 +144,13 @@ index_body = f"""
     <p class="lead">Weitere folgen: Rentenstart, Todesfall-Checkliste, Widerspruchs-Kits für Pflegegrad und Schwerbehinderung.</p>
     <div class="grid grid--2" style="margin-top:32px">
       <article>
-        <a class="shelf" style="display:block;max-width:420px" href="produkte.html#notfallordner" aria-label="Zum Notfall- und Vorsorgeordner"><img class="doc" src="assets/img/notfall-cover.webp" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
+        <a class="shelf" style="display:block;max-width:420px" href="produkte.html#notfallordner" aria-label="Zum Notfall- und Vorsorgeordner"><img class="doc" src="assets/img/notfall-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#notfallordner">Notfall- und Vorsorgeordner</a></h3>
         <p>36 Seiten in 9 Teilen: Notfallblatt, Vollmachten, Finanzen, Verträge, digitaler Nachlass, Checklisten für den Todesfall, persönliche Botschaft.</p>
         <p class="tnum"><strong>19,90 €</strong> <span class="soft">Einführungspreis · regulär 24,90 €</span></p>
       </article>
       <article>
-        <a class="shelf" style="display:block;max-width:420px" href="produkte.html#pflegeordner" aria-label="Zum Pflegeordner"><img class="doc" src="assets/img/pflege-cover.webp" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
+        <a class="shelf" style="display:block;max-width:420px" href="produkte.html#pflegeordner" aria-label="Zum Pflegeordner"><img class="doc" src="assets/img/pflege-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#pflegeordner">Pflegeordner für Angehörige</a></h3>
         <p>44 Seiten in 8 Teilen: Pflegegrad beantragen, Pflegetagebuch, Leistungen der Pflegekasse 2026, Wochenplan, Übergabeblatt, Protokolle, Finanzen.</p>
         <p class="tnum"><strong>12,90 €</strong> <span class="soft">Einführungspreis · regulär 14,90 €</span></p>
@@ -230,11 +231,11 @@ produkte_body = f"""
     <article class="product" id="notfallordner">
       <div class="grid grid--5-7">
         <figure class="shelf">
-          <img class="doc" src="assets/img/notfall-cover.webp" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287">
+          <img class="doc" src="assets/img/notfall-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287">
           <div class="thumbs">
-            <img src="assets/img/notfall-s04.webp" alt="Seite 4: Notfallblatt mit Feldern für Kontakte, Medikamente und Vorsorgedokumente" width="910" height="1287" loading="lazy">
-            <img src="assets/img/notfall-s06.webp" alt="Seite 6: Medikamentenplan als Tabelle" width="910" height="1287" loading="lazy">
-            <img src="assets/img/notfall-s26.webp" alt="Seite 26: Digitaler Nachlass – Geräte und Online-Konten" width="910" height="1287" loading="lazy">
+            <img src="assets/img/notfall-s04.webp?v={ASSET_V}" alt="Seite 4: Notfallblatt mit Feldern für Kontakte, Medikamente und Vorsorgedokumente" width="910" height="1287" loading="lazy">
+            <img src="assets/img/notfall-s06.webp?v={ASSET_V}" alt="Seite 6: Medikamentenplan als Tabelle" width="910" height="1287" loading="lazy">
+            <img src="assets/img/notfall-s26.webp?v={ASSET_V}" alt="Seite 26: Digitaler Nachlass – Geräte und Online-Konten" width="910" height="1287" loading="lazy">
           </div>
           <figcaption>Echte Seiten aus der Druckfassung. Die ausfüllbare Fassung hat an denselben Stellen Formularfelder.</figcaption>
         </figure>
@@ -259,11 +260,11 @@ produkte_body = f"""
     <article class="product" id="pflegeordner">
       <div class="grid grid--5-7">
         <figure class="shelf">
-          <img class="doc" src="assets/img/pflege-cover.webp" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy">
+          <img class="doc" src="assets/img/pflege-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy">
           <div class="thumbs">
-            <img src="assets/img/pflege-s04.webp" alt="Seite 4: Pflege-Notfallblatt mit Kontakten und Hauptpflegeperson" width="910" height="1287" loading="lazy">
-            <img src="assets/img/pflege-s06.webp" alt="Seite 6: Checkliste „Erste Schritte: Pflegegrad beantragen“" width="910" height="1287" loading="lazy">
-            <img src="assets/img/pflege-s17.webp" alt="Seite 17: Leistungen der Pflegekasse nach Pflegegrad" width="910" height="1287" loading="lazy">
+            <img src="assets/img/pflege-s04.webp?v={ASSET_V}" alt="Seite 4: Pflege-Notfallblatt mit Kontakten und Hauptpflegeperson" width="910" height="1287" loading="lazy">
+            <img src="assets/img/pflege-s06.webp?v={ASSET_V}" alt="Seite 6: Checkliste „Erste Schritte: Pflegegrad beantragen“" width="910" height="1287" loading="lazy">
+            <img src="assets/img/pflege-s17.webp?v={ASSET_V}" alt="Seite 17: Leistungen der Pflegekasse nach Pflegegrad" width="910" height="1287" loading="lazy">
           </div>
           <figcaption>Echte Seiten aus der Druckfassung.</figcaption>
         </figure>
