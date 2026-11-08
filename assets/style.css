@@ -132,6 +132,9 @@ hr { border: 0; border-top: 1px solid var(--line); margin: var(--s7) 0; }
 .check li { position: relative; padding-left: 36px; margin-bottom: var(--s2); }
 .check li::before { content: ""; position: absolute; left: 0; top: .2em; width: 24px; height: 24px; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='%232E6B4F'/><path d='M7 12.5l3 3 7-7' stroke='%23F3EDE3' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat; }
 
+.check--big li { font-size: 1.25rem; margin-bottom: var(--s3); padding-left: 40px; }
+.check--big li::before { width: 26px; height: 26px; top: .15em; }
+
 /* Schritte (echte Reihenfolge) */
 .steps { list-style: none; counter-reset: step; padding: 0; margin: var(--s5) 0 0; max-width: none; display: grid; gap: var(--s5); }
 @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); } }
