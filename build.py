@@ -15,6 +15,12 @@ YEAR = "2026"
 
 NAV = [("produkte.html", "Produkte"), ("so-funktioniert-es.html", "So funktioniert es"), ("ueber.html", "Über"), ("kontakt.html", "Kontakt")]
 
+
+def farbreihe():
+    items = "".join(f'<li><img src="assets/img/farben/{k}.webp?v={ASSET_V}" alt="Deckblatt in {t["name"]}" width="373" height="527" loading="lazy"><span>{t["name"]}</span></li>' for k, t in THEMES.items())
+    return f'<ul class="farben">{items}</ul>'
+THEMES = {'navy': {'name': 'Navy', 'primary': '#1F3A5F'}, 'salbei': {'name': 'Salbei', 'primary': '#3F5A4A'}, 'bordeaux': {'name': 'Bordeaux', 'primary': '#5B1F2E'}, 'tanne': {'name': 'Tannengrün', 'primary': '#1F4A3A'}, 'petrol': {'name': 'Petrol', 'primary': '#1B4F5C'}, 'schiefer': {'name': 'Schiefer', 'primary': '#3B4350'}, 'pflaume': {'name': 'Pflaume', 'primary': '#4A2C4F'}, 'terrakotta': {'name': 'Terrakotta', 'primary': '#8A3B2E'}, 'ozean': {'name': 'Ozeanblau', 'primary': '#1F4E79'}, 'mokka': {'name': 'Mokka', 'primary': '#4A3728'}, 'olive': {'name': 'Olive', 'primary': '#4F5A2A'}, 'anthrazit': {'name': 'Anthrazit', 'primary': '#2A2A2A'}, 'beere': {'name': 'Beere', 'primary': '#7A1F4A'}, 'rauchblau': {'name': 'Rauchblau', 'primary': '#4A6274'}}
+
 def shop_button(label="Zum Shop auf Etsy", cls="btn btn--primary"):
     if SHOP_LIVE:
         return f'<a class="{cls}" href="{ETSY}" rel="noopener">{label}</a>'
@@ -130,6 +136,7 @@ index_body = f"""
       <p class="lead">Die meisten Dinge sind irgendwo geregelt – im Kopf, in einer Schublade, in einem Online-Konto. Im Ernstfall hilft das niemandem. Ein Kompassordner bringt alles an einen Ort: auf Papier, zum Anfassen, für die Menschen, die dann handeln müssen.</p>
       <ul class="check check--big">
         <li><strong>Zum Ausfüllen oder Ausdrucken</strong></li>
+        <li><strong>14 Farbwelten im Download</strong></li>
         <li><strong>Der Sofort-Teil kommt zuerst</strong></li>
         <li><strong>Jede Angabe mit Quelle und Stand</strong></li>
         <li><strong>Keine Passwörter im Ordner</strong></li>
@@ -156,6 +163,14 @@ index_body = f"""
         <p class="tnum"><strong>12,90 €</strong> <span class="soft">Einführungspreis · regulär 14,90 €</span></p>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Deine Farbe, dein Ordner</h2>
+    <p class="lead">Jeder Kauf enthält alle 14 Farbwelten – von Navy bis Terrakotta. Das Papier bleibt immer ruhig im Sandton, die Deckel- und Überschriftenfarbe wählst du selbst. Einfach im Download den Ordner mit deiner Farbe öffnen.</p>
+    {farbreihe()}
   </div>
 </section>
 
@@ -226,7 +241,7 @@ produkte_body = f"""
 <section class="section">
   <div class="wrap">
     <h1>Die Ordner</h1>
-    <p class="lead">Jeder Ordner kommt als ausfüllbare PDF, als Druckfassung mit Linien und mit einem Blatt „Lesen zuerst“. Dazu dieselben Dateien in zwei weiteren Farbwelten (Salbei, Bordeaux). Digitale Produkte, kein Versand – Kauf und Download über Etsy.</p>
+    <p class="lead">Jeder Ordner kommt als ausfüllbare PDF, als Druckfassung mit Linien und mit einem Blatt „Lesen zuerst“. Dazu dieselben Dateien in allen 14 Farbwelten – du wählst im Download die Farbe, die zu dir passt. Digitale Produkte, kein Versand – Kauf und Download über Etsy.</p>
 
     <article class="product" id="notfallordner">
       <div class="grid grid--5-7">
@@ -249,7 +264,7 @@ produkte_body = f"""
             <li>Ausfüllbare PDF mit über 1.500 Formularfeldern, speicherbar</li>
             <li>Druckfassung mit Linien, auch in Schwarz-Weiß ruhig</li>
             <li>„Lesen zuerst“ – eine Seite, die alles erklärt</li>
-            <li>Farbwelten Salbei und Bordeaux als ZIP</li>
+            <li>Alle 14 Farbwelten als ZIP (Navy, Salbei, Bordeaux, Tannengrün, Petrol, Schiefer, Pflaume, Terrakotta, Ozeanblau, Mokka, Olive, Anthrazit, Beere, Rauchblau)</li>
             <li>Updates kostenlos im Download-Bereich</li>
           </ul>
           <div class="actions">{shop_button("Notfallordner auf Etsy ansehen")}</div>
@@ -278,7 +293,7 @@ produkte_body = f"""
             <li>Ausfüllbare PDF mit über 2.500 Formularfeldern, speicherbar</li>
             <li>Druckfassung mit Linien</li>
             <li>„Lesen zuerst“ – eine Seite, die alles erklärt</li>
-            <li>Farbwelten Salbei und Bordeaux als ZIP</li>
+            <li>Alle 14 Farbwelten als ZIP (Navy, Salbei, Bordeaux, Tannengrün, Petrol, Schiefer, Pflaume, Terrakotta, Ozeanblau, Mokka, Olive, Anthrazit, Beere, Rauchblau)</li>
             <li>Alle Beträge und Fristen mit Stand 01/2026 und Quelle; Updates kostenlos</li>
           </ul>
           <div class="actions">{shop_button("Pflegeordner auf Etsy ansehen")}</div>
@@ -289,8 +304,8 @@ produkte_body = f"""
     <hr>
     <div class="grid grid--2">
       <div>
-        <h2>Wunschfarbe oder Name auf dem Deckblatt</h2>
-        <p>Jeden Ordner gibt es auch personalisiert: in deiner Farbe und mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt. 34,90 € je Ordner, als eigenes Angebot im Shop.</p>
+        <h2>Name auf dem Deckblatt</h2>
+        <p>Jeden Ordner gibt es auch personalisiert: mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt, in der Farbwelt deiner Wahl. 34,90 € je Ordner, als eigenes Angebot im Shop.</p>
       </div>
       <div>
         <h2>Für Pflegedienste, Bestatter, Berater</h2>

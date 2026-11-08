@@ -186,3 +186,8 @@ details p { padding-bottom: var(--s4); }
 .mt-0 { margin-top: 0; } .mb-0 { margin-bottom: 0; }
 .center { text-align: center; }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Farbreihe */
+.farben { list-style: none; padding: 0; margin: var(--s5) 0 0; max-width: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: var(--s4); }
+.farben li { text-align: center; font-size: 1rem; color: var(--ink-soft); }
+.farben img { width: 100%; height: auto; display: block; border-radius: var(--r1); box-shadow: 0 10px 18px -14px rgba(31,58,95,.45), 0 0 0 1px var(--line); background: var(--paper); margin-bottom: var(--s2); }
