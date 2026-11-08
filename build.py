@@ -10,7 +10,7 @@ MAIL_SHOP = "shop@kompassordner.de"
 MAIL_POST = "post@kompassordner.de"
 MAIL_LIZENZ = "lizenz@kompassordner.de"
 STAND = "11/2026"
-ASSET_V = "2"   # bei Asset-Änderungen hochzählen (umgeht Browser-Cache)
+ASSET_V = "3"   # bei Asset-Änderungen hochzählen (umgeht Browser-Cache)
 YEAR = "2026"
 
 NAV = [("produkte.html", "Produkte"), ("so-funktioniert-es.html", "So funktioniert es"), ("ueber.html", "Über"), ("kontakt.html", "Kontakt")]
@@ -305,7 +305,9 @@ produkte_body = f"""
     <div class="grid grid--2">
       <div>
         <h2>Name auf dem Deckblatt</h2>
-        <p>Jeden Ordner gibt es auch personalisiert: mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt, in der Farbwelt deiner Wahl. 34,90 € je Ordner, als eigenes Angebot im Shop.</p>
+        <p>Jeden Ordner gibt es auch personalisiert: mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt, in der Farbwelt deiner Wahl. 29,90 € je Ordner, als eigenes Angebot im Shop.</p>
+        <h2 style="margin-top:32px">Besondere Situation? Schreib uns.</h2>
+        <p>Patchwork-Familie, eigener Betrieb, Haus im Ausland, Pflege durch mehrere Angehörige – wenn dein Fall nicht ins Raster passt, stellen wir dir den Ordner aus allen vorhandenen Seiten passend zusammen: eigene Rubriken, angepasste Bezeichnungen, dein Name, deine Farbe. Ab 49 € inklusive einer Korrekturrunde, fertig in drei Werktagen. Schreib kurz, worum es geht, an <a href="mailto:{MAIL_SHOP}?subject=Besondere%20Situation">{MAIL_SHOP}</a> – du bekommst einen Festpreis, bevor du etwas kaufst.</p>
       </div>
       <div>
         <h2>Für Pflegedienste, Bestatter, Berater</h2>
@@ -411,6 +413,8 @@ kontakt_body = f"""
       </div>
       <h2 id="start" style="margin-top:48px">Bescheid bekommen, wenn der Shop öffnet</h2>
       <p>Der Etsy-Shop öffnet in Kürze. Wenn du eine kurze Nachricht an <a href="mailto:{MAIL_SHOP}?subject=Bescheid%20geben%2C%20wenn%20der%20Shop%20%C3%B6ffnet">{MAIL_SHOP}</a> schickst, melden wir uns einmal, sobald die Ordner verfügbar sind – keine weiteren Mails, kein Newsletter. Oder folge <a href="{PINTEREST}" rel="noopener">Kompassordner auf Pinterest</a>.</p>
+      <h2 style="margin-top:48px">Besondere Situation?</h2>
+      <p>Wenn dein Fall nicht ins Raster passt, stellen wir dir einen Ordner aus allen vorhandenen Seiten passend zusammen – eigene Rubriken, angepasste Bezeichnungen, dein Name, deine Farbe. Ab 49 € inklusive einer Korrekturrunde, fertig in drei Werktagen. Schreib kurz, worum es geht, an <a href="mailto:{MAIL_SHOP}?subject=Besondere%20Situation">{MAIL_SHOP}</a>; du bekommst einen Festpreis, bevor du etwas kaufst. Keine Rechtstexte – wir ordnen, wir beraten nicht.</p>
       <h2 style="margin-top:48px">Firmenlizenzen</h2>
       <p>Pflegedienste, Bestatter, Steuerberater, Makler: Für Ordner mit eigenem Logo und eigenen Farben zur Weitergabe an Kunden schreib an <a href="mailto:{MAIL_LIZENZ}">{MAIL_LIZENZ}</a>. Du bekommst innerhalb von zwei Werktagen eine Vorschau mit deinem Logo.</p>
       <h2 style="margin-top:48px">Postanschrift</h2>
