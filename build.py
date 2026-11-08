@@ -90,7 +90,7 @@ def page(path, title, desc, body, current=None, h1_in_body=True):
         </ul>
       </div>
     </div>
-    <p class="legal">© {YEAR} Kompassordner · Tobias Freudenau, Wiedemar · Die Vorlagen dienen der Dokumentation und Organisation und ersetzen keine Rechts-, Steuer- oder medizinische Beratung.</p>
+    <p class="legal">© {YEAR} Kompassordner · Tobias Freudenau, Schkeuditz · Die Vorlagen dienen der Dokumentation und Organisation und ersetzen keine Rechts-, Steuer- oder medizinische Beratung.</p>
   </div>
 </footer>
 </body>
@@ -357,7 +357,7 @@ ueber_body = f"""
       <h1>Über Kompassordner</h1>
     </div>
     <div>
-      <p class="lead">Kompassordner ist ein kleines Unternehmen aus Wiedemar bei Leipzig. Es macht Ordner, mit denen Familien die Dinge regeln, die man gern aufschiebt: Was ist im Notfall zu tun, wer darf entscheiden, wo liegt was, wie organisieren wir die Pflege.</p>
+      <p class="lead">Kompassordner ist ein kleines Unternehmen aus Schkeuditz bei Leipzig. Es macht Ordner, mit denen Familien die Dinge regeln, die man gern aufschiebt: Was ist im Notfall zu tun, wer darf entscheiden, wo liegt was, wie organisieren wir die Pflege.</p>
       <h2>Warum ein Kompass auf einem Ordner</h2>
       <p>Weil es im Ernstfall nicht an gutem Willen fehlt, sondern an Orientierung. Fristen, Formulare, Zuständigkeiten – das ist der Weg durch unbekanntes Gelände. Ein Kompass zeigt die Richtung. Ein Ordner hält fest, was man unterwegs braucht. Beides zusammen ist das, was Angehörige in einer schweren Woche am meisten brauchen: einen Ort, an dem alles steht.</p>
       <h2>Drei Dinge, an die wir uns halten</h2>
@@ -398,7 +398,7 @@ kontakt_body = f"""
       <h2 style="margin-top:48px">Firmenlizenzen</h2>
       <p>Pflegedienste, Bestatter, Steuerberater, Makler: Für Ordner mit eigenem Logo und eigenen Farben zur Weitergabe an Kunden schreib an <a href="mailto:{MAIL_LIZENZ}">{MAIL_LIZENZ}</a>. Du bekommst innerhalb von zwei Werktagen eine Vorschau mit deinem Logo.</p>
       <h2 style="margin-top:48px">Postanschrift</h2>
-      <address class="prose">Kompassordner · Tobias Freudenau<br>Delitzscher Straße 27<br>04509 Wiedemar</address>
+      <address class="prose">Kompassordner · Tobias Freudenau<br>Hauptstraße 5<br>04435 Schkeuditz</address>
       <p class="small soft" style="margin-top:16px">Wir verschicken keine gedruckten Ordner – alle Produkte sind digitale Downloads.</p>
     </div>
   </div>
@@ -417,12 +417,12 @@ impressum_body = f"""
     <address>
       Tobias Freudenau<br>
       Kompassordner<br>
-      Delitzscher Straße 27<br>
-      04509 Wiedemar<br>
+      Hauptstraße 5<br>
+      04435 Schkeuditz<br>
       Deutschland
     </address>
     <h2>Kontakt</h2>
-    <p>Telefon: 01520 4574624<br>E-Mail: <a href="mailto:{MAIL_POST}">{MAIL_POST}</a></p>
+    <p>E-Mail: <a href="mailto:{MAIL_POST}">{MAIL_POST}</a></p>
     <h2>Umsatzsteuer</h2>
     <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: wird nach Erteilung nachgetragen.</p>
     <p>Kleinunternehmer im Sinne von § 19 UStG; Umsatzsteuer wird nicht ausgewiesen.</p>
@@ -450,7 +450,7 @@ datenschutz_body = f"""
     <p class="small soft">Stand: 08.11.2026</p>
 
     <h2>1. Verantwortlicher</h2>
-    <address>Tobias Freudenau · Kompassordner<br>Delitzscher Straße 27 · 04509 Wiedemar<br>E-Mail: <a href="mailto:{MAIL_POST}">{MAIL_POST}</a></address>
+    <address>Tobias Freudenau · Kompassordner<br>Hauptstraße 5 · 04435 Schkeuditz<br>E-Mail: <a href="mailto:{MAIL_POST}">{MAIL_POST}</a></address>
 
     <h2>2. Aufruf der Website (Hosting)</h2>
     <p>Diese Website wird als statische Seite über <strong>GitHub Pages</strong> bereitgestellt, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (eine Tochtergesellschaft der Microsoft Corporation). Beim Aufruf einer Seite verarbeitet GitHub technisch notwendig deine IP-Adresse, Datum und Uhrzeit, die aufgerufene Seite, den verwendeten Browser und das Betriebssystem sowie die zuvor besuchte Seite (Referrer), um die Seite auszuliefern und die Sicherheit des Dienstes zu gewährleisten.</p>
@@ -490,14 +490,14 @@ widerruf_body = f"""
     <h2 id="widerruf">Widerrufsbelehrung für digitale Inhalte</h2>
     <h3>Widerrufsrecht</h3>
     <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
-    <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Tobias Freudenau, Kompassordner, Delitzscher Straße 27, 04509 Wiedemar, Telefon 01520 4574624, E-Mail {MAIL_POST}) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+    <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Tobias Freudenau, Kompassordner, Hauptstraße 5, 04435 Schkeuditz, E-Mail {MAIL_POST}) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
     <h3>Folgen des Widerrufs</h3>
     <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
     <h3>Vorzeitiges Erlöschen des Widerrufsrechts</h3>
     <p>Bei einem Vertrag über die Lieferung von nicht auf einem körperlichen Datenträger befindlichen digitalen Inhalten erlischt das Widerrufsrecht gemäß § 356 Abs. 5 BGB, wenn wir mit der Ausführung des Vertrags begonnen haben, nachdem Sie ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist mit der Ausführung beginnen, und Sie Ihre Kenntnis davon bestätigt haben, dass Sie durch Ihre Zustimmung mit Beginn der Ausführung Ihr Widerrufsrecht verlieren. Die Zustimmung und Bestätigung erfolgen über die von Etsy vor Abschluss der Bestellung bereitgestellte Checkbox. Wir bestätigen Ihnen das Erlöschen in der Bestellbestätigung.</p>
     <h3>Muster-Widerrufsformular</h3>
     <p>(Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
-    <p>An: Tobias Freudenau, Kompassordner, Delitzscher Straße 27, 04509 Wiedemar, {MAIL_POST}<br>
+    <p>An: Tobias Freudenau, Kompassordner, Hauptstraße 5, 04435 Schkeuditz, {MAIL_POST}<br>
     Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*)<br>
     Bestellt am (*)/erhalten am (*): ______<br>
     Name des/der Verbraucher(s): ______<br>
@@ -508,7 +508,7 @@ widerruf_body = f"""
 
     <h2 id="agb">Allgemeine Geschäftsbedingungen</h2>
     <h3>1. Geltungsbereich</h3>
-    <p>Diese AGB gelten für alle Verträge über digitale Inhalte (PDF-Vorlagen, Ordner, Checklisten), die Tobias Freudenau, Kompassordner, Delitzscher Straße 27, 04509 Wiedemar (nachfolgend „Anbieter“), über die Plattform Etsy mit Verbrauchern und Unternehmern (nachfolgend „Kunde“) schließt. Ergänzend gelten die Nutzungsbedingungen von Etsy.</p>
+    <p>Diese AGB gelten für alle Verträge über digitale Inhalte (PDF-Vorlagen, Ordner, Checklisten), die Tobias Freudenau, Kompassordner, Hauptstraße 5, 04435 Schkeuditz (nachfolgend „Anbieter“), über die Plattform Etsy mit Verbrauchern und Unternehmern (nachfolgend „Kunde“) schließt. Ergänzend gelten die Nutzungsbedingungen von Etsy.</p>
     <h3>2. Vertragsschluss</h3>
     <p>Die Produktdarstellungen im Shop sind kein verbindliches Angebot, sondern eine Aufforderung zur Bestellung. Mit dem Abschluss des Bestellvorgangs über den Button „Kaufen“ bzw. „Bezahlen“ gibt der Kunde ein verbindliches Angebot ab. Der Vertrag kommt mit der Bestellbestätigung von Etsy bzw. der Bereitstellung des Downloads zustande. Vertragssprache ist Deutsch.</p>
     <h3>3. Lieferung digitaler Inhalte</h3>
@@ -527,7 +527,7 @@ widerruf_body = f"""
     <p>Der Anbieter ist nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG). Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts; für Verbraucher mit gewöhnlichem Aufenthalt im Ausland bleiben zwingende Verbraucherschutzvorschriften ihres Aufenthaltsstaats unberührt. Sollte eine Bestimmung unwirksam sein, bleibt der übrige Vertrag wirksam.</p>
 
     <h2 id="datenschutz-shop">Datenschutzhinweis für Käufe über Etsy</h2>
-    <p>Verantwortlicher: Tobias Freudenau, Kompassordner, Delitzscher Straße 27, 04509 Wiedemar, {MAIL_POST}.</p>
+    <p>Verantwortlicher: Tobias Freudenau, Kompassordner, Hauptstraße 5, 04435 Schkeuditz, {MAIL_POST}.</p>
     <p><strong>Welche Daten wir erhalten:</strong> Bei einer Bestellung übermittelt Etsy uns Ihren Namen, Ihren Etsy-Nutzernamen, Ihre Bestelldaten und – soweit angegeben – Ihre Nachricht. Für personalisierte Produkte verarbeiten wir zusätzlich die von Ihnen angegebenen Personalisierungsdaten (z. B. Name, Firmenname, Logo, Farbangaben).</p>
     <p><strong>Zwecke und Rechtsgrundlagen:</strong> Vertragserfüllung und Lieferung der digitalen Inhalte, Kundenservice und Beantwortung von Anfragen (Art. 6 Abs. 1 lit. b DSGVO); Erfüllung steuer- und handelsrechtlicher Aufbewahrungspflichten (Art. 6 Abs. 1 lit. c DSGVO); Verteidigung von Rechtsansprüchen (Art. 6 Abs. 1 lit. f DSGVO).</p>
     <p><strong>Empfänger:</strong> Etsy Ireland UC (Plattform und Zahlungsabwicklung), unser Steuerberater und – bei Zahlungsabwicklung – unsere Bank. Eine darüber hinausgehende Weitergabe findet nicht statt; eine Nutzung für Werbung erfolgt nicht.</p>
