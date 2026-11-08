@@ -376,7 +376,7 @@ ueber_body = f"""
 </section>
 """
 page("ueber.html", "Über Kompassordner – wer dahinter steht und wie die Ordner entstehen",
-     "Kompassordner aus Wiedemar bei Leipzig: Ordner für Notfall, Pflege, Rente und Nachlass. Haltung, Arbeitsweise, was wir nicht tun.",
+     "Kompassordner aus Schkeuditz bei Leipzig: Ordner für Notfall, Pflege, Rente und Nachlass. Haltung, Arbeitsweise, was wir nicht tun.",
      ueber_body, current="ueber.html")
 
 # ---------------------------------------------------------------- Kontakt
@@ -439,7 +439,7 @@ impressum_body = f"""
   </div>
 </section>
 """
-page("impressum.html", "Impressum | Kompassordner", "Impressum von Kompassordner, Tobias Freudenau, Wiedemar – Angaben gemäß § 5 DDG.", impressum_body)
+page("impressum.html", "Impressum | Kompassordner", "Impressum von Kompassordner, Tobias Freudenau, Schkeuditz – Angaben gemäß § 5 DDG.", impressum_body)
 
 # ---------------------------------------------------------------- Datenschutz
 datenschutz_body = f"""
