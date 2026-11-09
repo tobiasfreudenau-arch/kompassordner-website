@@ -10,7 +10,7 @@ MAIL_SHOP = "shop@kompassordner.de"
 MAIL_POST = "post@kompassordner.de"
 MAIL_LIZENZ = "lizenz@kompassordner.de"
 STAND = "11/2026"
-ASSET_V = "3"   # bei Asset-Änderungen hochzählen (umgeht Browser-Cache)
+ASSET_V = "4"   # bei Asset-Änderungen hochzählen (umgeht Browser-Cache)
 YEAR = "2026"
 
 NAV = [("produkte.html", "Produkte"), ("so-funktioniert-es.html", "So funktioniert es"), ("ueber.html", "Über"), ("kontakt.html", "Kontakt")]
@@ -147,9 +147,9 @@ index_body = f"""
 
 <section class="section">
   <div class="wrap">
-    <h2>Zwei Ordner zum Start</h2>
-    <p class="lead">Weitere folgen: Rentenstart, Todesfall-Checkliste, Widerspruchs-Kits für Pflegegrad und Schwerbehinderung.</p>
-    <div class="grid grid--2" style="margin-top:32px">
+    <h2>Drei Ordner zum Start</h2>
+    <p class="lead">Weitere folgen: Todesfall-Checkliste, Widerspruchs-Kits für Pflegegrad und Schwerbehinderung, Zusatzmodul „Zugangsdaten &amp; Schlüssel“.</p>
+    <div class="grid grid--3" style="margin-top:32px">
       <article>
         <a class="shelf" style="display:block;max-width:420px" href="produkte.html#notfallordner" aria-label="Zum Notfall- und Vorsorgeordner"><img class="doc" src="assets/img/notfall-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#notfallordner">Notfall- und Vorsorgeordner</a></h3>
@@ -161,6 +161,12 @@ index_body = f"""
         <h3 style="margin-top:24px"><a href="produkte.html#pflegeordner">Pflegeordner für Angehörige</a></h3>
         <p>44 Seiten in 8 Teilen: Pflegegrad beantragen, Pflegetagebuch, Leistungen der Pflegekasse 2026, Wochenplan, Übergabeblatt, Protokolle, Finanzen.</p>
         <p class="tnum"><strong>12,90 €</strong> <span class="soft">Einführungspreis · regulär 14,90 €</span></p>
+      </article>
+      <article>
+        <a class="shelf" style="display:block;max-width:420px" href="produkte.html#rentenordner" aria-label="Zum Rentenordner"><img class="doc" src="assets/img/rente-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Rentenordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
+        <h3 style="margin-top:24px"><a href="produkte.html#rentenordner">Rentenordner</a></h3>
+        <p>37 Seiten in 6 Teilen: Fahrplan 24 Monate vor dem Rentenbeginn, Rentenkonto klären, Rentenart und Zeitpunkt wählen, Antrag, Bescheid prüfen, Budget, Glossar.</p>
+        <p class="tnum"><strong>9,90 €</strong> <span class="soft">Einführungspreis · regulär 14,90 €</span></p>
       </article>
     </div>
   </div>
@@ -207,7 +213,7 @@ index_body = f"""
 </section>
 """
 page("index.html", "Kompassordner – Ordner für Notfall, Pflege, Rente und Nachlass zum Ausfüllen",
-     "Ordner zum Ausfüllen und Ausdrucken (PDF): Notfall- und Vorsorgeordner, Pflegeordner für Angehörige. Jede Angabe mit Quelle und Stand, Updates kostenlos.",
+     "Ordner zum Ausfüllen und Ausdrucken (PDF): Notfall- und Vorsorgeordner, Pflegeordner für Angehörige, Rentenordner. Jede Angabe mit Quelle und Stand, Updates kostenlos.",
      index_body, current=None)
 
 # ---------------------------------------------------------------- Produkte
@@ -235,6 +241,16 @@ pflege_reg = register([
     ("F", "Finanzen – Kosten und Erstattungen, Vereinbarung zum Pflegegeld, Belege für die Steuer", ""),
     ("G", "Für die Pflegeperson – Beruf und Pflege vereinbaren, Entlastungs-Check, Notfallplan", ""),
     ("H", "Vorsorge und Übergang – Vollmachten im Überblick, Vergleich Tagespflege, Kurzzeitpflege, Heim", ""),
+])
+
+rente_reg = register([
+    ("A", "Überblick und Fahrplan – 24 Monate vorher bis 3 Monate danach, Eckdaten, Ansprechpartner, Terminprotokoll", "S. 4–6"),
+    ("B", "Rentenkonto klären – Lückenfinder, Nachweis-Matrix, Kontenklärung, Rentenauskunft lesen", "S. 7–10"),
+    ("C", "Welche Rente, wann? – Rentenarten, Altersgrenze nach Jahrgang, drei Szenarien, Weiterarbeiten und Aktivrente, Beratungsgespräch vorbereiten", "S. 11–15"),
+    ("D", "Antrag und Bescheid – Unterlagen, Antragsweg, Krankenversicherung im Ruhestand, Bescheid prüfen, Widerspruch", "S. 16–20"),
+    ("E", "Arbeitgeber, weitere Renten, Geld – Abschluss-Checkliste, Betriebsrenten und private Vorsorge, Ausland und Sonderfälle, Budget, Steuern, Versicherungen, Verträge", "S. 21–28"),
+    ("F", "Übergang und Familie – die ersten drei Monate, jährliche Prüfung, wenn die Rente nicht reicht, Hinterbliebenenrente, Ablageplan", "S. 29–34"),
+    ("G", "Anhang – Notizen, Glossar „Begriffe kurz erklärt“, Quellen und Stand", "S. 35–37"),
 ])
 
 produkte_body = f"""
@@ -301,6 +317,35 @@ produkte_body = f"""
       </div>
     </article>
 
+    <article class="product" id="rentenordner">
+      <div class="grid grid--5-7">
+        <figure class="shelf">
+          <img class="doc" src="assets/img/rente-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Rentenordner“" width="910" height="1287" loading="lazy">
+          <div class="thumbs">
+            <img src="assets/img/rente-s04.webp?v={ASSET_V}" alt="Seite 4: Fahrplan zur Rente – 24 Monate vor dem Rentenbeginn bis 3 Monate danach" width="910" height="1287" loading="lazy">
+            <img src="assets/img/rente-s13.webp?v={ASSET_V}" alt="Seite 13: Drei Szenarien für den Rentenbeginn nebeneinander" width="910" height="1287" loading="lazy">
+            <img src="assets/img/rente-s19.webp?v={ASSET_V}" alt="Seite 19: Rentenbescheid prüfen – Checkliste" width="910" height="1287" loading="lazy">
+          </div>
+          <figcaption>Echte Seiten aus der Druckfassung.</figcaption>
+        </figure>
+        <div>
+          <h2 style="font-size:2rem">Rentenordner</h2>
+          <p class="price">9,90 € <s>14,90 €</s><small>Einführungspreis bis zu den ersten Bewertungen · 37 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
+          <p>Rentenkonto klären, Nachweise suchen, Rentenart wählen, Antrag stellen, Bescheid prüfen, Arbeitgeber und Versicherungen regeln – der Weg in die Rente dauert etwa zwei Jahre und besteht aus vielen kleinen Schritten. Der Rentenordner hält alle an einem Ort fest: mit Fahrplan, Checklisten und Platz für deine Zahlen. Er rechnet nicht und berät nicht – er sorgt dafür, dass du vorbereitet bist, wenn du mit der Rentenversicherung sprichst.</p>
+          <h3>Das ist enthalten</h3>
+          {rente_reg}
+          <ul class="check" style="margin-top:24px">
+            <li>Ausfüllbare PDF mit über 1.000 Formularfeldern, speicherbar</li>
+            <li>Druckfassung mit Linien</li>
+            <li>„Lesen zuerst“ – eine Seite, die alles erklärt</li>
+            <li>Alle 14 Farbwelten als ZIP (Navy, Salbei, Bordeaux, Tannengrün, Petrol, Schiefer, Pflaume, Terrakotta, Ozeanblau, Mokka, Olive, Anthrazit, Beere, Rauchblau)</li>
+            <li>Altersgrenzen, Fristen und Beträge mit Stand {STAND} und Quelle (SGB VI, EStG, Deutsche Rentenversicherung); Updates kostenlos</li>
+          </ul>
+          <div class="actions">{shop_button("Rentenordner auf Etsy ansehen")}</div>
+        </div>
+      </div>
+    </article>
+
     <hr>
     <div class="grid grid--2">
       <div>
@@ -320,8 +365,8 @@ produkte_body = f"""
   </div>
 </section>
 """
-page("produkte.html", "Produkte – Notfallordner und Pflegeordner zum Ausfüllen | Kompassordner",
-     "Notfall- und Vorsorgeordner (36 Seiten) und Pflegeordner für Angehörige (44 Seiten) als ausfüllbare PDF und Druckfassung. Inhalt, Preise, Lizenzen.",
+page("produkte.html", "Produkte – Notfallordner, Pflegeordner und Rentenordner zum Ausfüllen | Kompassordner",
+     "Notfall- und Vorsorgeordner (36 Seiten), Pflegeordner für Angehörige (44 Seiten) und Rentenordner (37 Seiten) als ausfüllbare PDF und Druckfassung. Inhalt, Preise, Lizenzen.",
      produkte_body, current="produkte.html")
 
 # ---------------------------------------------------------------- So funktioniert es
