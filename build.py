@@ -3,14 +3,17 @@
 import os, datetime
 
 SITE = "https://www.kompassordner.de"
-SHOP_LIVE = False                       # auf True setzen, sobald der Etsy-Shop online ist
+SHOP_LIVE = True                        # auf True setzen, sobald der Etsy-Shop online ist
 ETSY = "https://www.etsy.com/de/shop/Kompassordner"
+ETSY_NOTFALL = "https://www.etsy.com/de/listing/4613325128"
+ETSY_PFLEGE = "https://www.etsy.com/de/listing/4613311315"
+ETSY_RENTE = "https://www.etsy.com/de/listing/4613313489"
 PINTEREST = "https://www.pinterest.com/kompassordner"
 MAIL_SHOP = "shop@kompassordner.de"
 MAIL_POST = "post@kompassordner.de"
 MAIL_LIZENZ = "lizenz@kompassordner.de"
 STAND = "11/2026"
-ASSET_V = "4"   # bei Asset-Änderungen hochzählen (umgeht Browser-Cache)
+ASSET_V = "5"   # bei Asset-Änderungen hochzählen (umgeht Browser-Cache)
 YEAR = "2026"
 
 NAV = [("produkte.html", "Produkte"), ("so-funktioniert-es.html", "So funktioniert es"), ("ueber.html", "Über"), ("kontakt.html", "Kontakt")]
@@ -21,9 +24,9 @@ def farbreihe():
     return f'<ul class="farben">{items}</ul>'
 THEMES = {'navy': {'name': 'Navy', 'primary': '#1F3A5F'}, 'salbei': {'name': 'Salbei', 'primary': '#3F5A4A'}, 'bordeaux': {'name': 'Bordeaux', 'primary': '#5B1F2E'}, 'tanne': {'name': 'Tannengrün', 'primary': '#1F4A3A'}, 'petrol': {'name': 'Petrol', 'primary': '#1B4F5C'}, 'schiefer': {'name': 'Schiefer', 'primary': '#3B4350'}, 'pflaume': {'name': 'Pflaume', 'primary': '#4A2C4F'}, 'terrakotta': {'name': 'Terrakotta', 'primary': '#8A3B2E'}, 'ozean': {'name': 'Ozeanblau', 'primary': '#1F4E79'}, 'mokka': {'name': 'Mokka', 'primary': '#4A3728'}, 'olive': {'name': 'Olive', 'primary': '#4F5A2A'}, 'anthrazit': {'name': 'Anthrazit', 'primary': '#2A2A2A'}, 'beere': {'name': 'Beere', 'primary': '#7A1F4A'}, 'rauchblau': {'name': 'Rauchblau', 'primary': '#4A6274'}}
 
-def shop_button(label="Zum Shop auf Etsy", cls="btn btn--primary"):
+def shop_button(label="Zum Shop auf Etsy", cls="btn btn--primary", url=None):
     if SHOP_LIVE:
-        return f'<a class="{cls}" href="{ETSY}" rel="noopener">{label}</a>'
+        return f'<a class="{cls}" href="{url or ETSY}" rel="noopener">{label}</a>'
     return f'<a class="{cls}" href="kontakt.html#start">Shop öffnet in Kürze – Bescheid bekommen</a>'
 
 def page(path, title, desc, body, current=None, h1_in_body=True):
@@ -154,19 +157,19 @@ index_body = f"""
         <a class="shelf" style="display:block;max-width:420px" href="produkte.html#notfallordner" aria-label="Zum Notfall- und Vorsorgeordner"><img class="doc" src="assets/img/notfall-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#notfallordner">Notfall- und Vorsorgeordner</a></h3>
         <p>36 Seiten in 9 Teilen: Notfallblatt, Vollmachten, Finanzen, Verträge, digitaler Nachlass, Checklisten für den Todesfall, persönliche Botschaft.</p>
-        <p class="tnum"><strong>19,90 €</strong> <span class="soft">Einführungspreis · regulär 24,90 €</span></p>
+        <p class="tnum"><strong>23,68 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
       </article>
       <article>
         <a class="shelf" style="display:block;max-width:420px" href="produkte.html#pflegeordner" aria-label="Zum Pflegeordner"><img class="doc" src="assets/img/pflege-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#pflegeordner">Pflegeordner für Angehörige</a></h3>
         <p>44 Seiten in 8 Teilen: Pflegegrad beantragen, Pflegetagebuch, Leistungen der Pflegekasse 2026, Wochenplan, Übergabeblatt, Protokolle, Finanzen.</p>
-        <p class="tnum"><strong>12,90 €</strong> <span class="soft">Einführungspreis · regulär 14,90 €</span></p>
+        <p class="tnum"><strong>15,35 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
       </article>
       <article>
         <a class="shelf" style="display:block;max-width:420px" href="produkte.html#rentenordner" aria-label="Zum Rentenordner"><img class="doc" src="assets/img/rente-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Rentenordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#rentenordner">Rentenordner</a></h3>
         <p>37 Seiten in 6 Teilen: Fahrplan 24 Monate vor dem Rentenbeginn, Rentenkonto klären, Rentenart und Zeitpunkt wählen, Antrag, Bescheid prüfen, Budget, Glossar.</p>
-        <p class="tnum"><strong>9,90 €</strong> <span class="soft">Einführungspreis · regulär 14,90 €</span></p>
+        <p class="tnum"><strong>11,78 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
       </article>
     </div>
   </div>
@@ -272,7 +275,7 @@ produkte_body = f"""
         </figure>
         <div>
           <h2 style="font-size:2rem">Notfall- und Vorsorgeordner</h2>
-          <p class="price">19,90 € <s>24,90 €</s><small>Einführungspreis bis zu den ersten Bewertungen · 36 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
+          <p class="price">23,68 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 36 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
           <p>Wenn etwas passiert, suchen Angehörige als Erstes: Wen rufe ich an? Welche Medikamente? Wo liegt die Vollmacht? Welche Verträge laufen? Dieser Ordner beantwortet das auf 36 Seiten – an einem Ort, ohne Suchen.</p>
           <h3>Das ist enthalten</h3>
           {notfall_reg}
@@ -283,7 +286,7 @@ produkte_body = f"""
             <li>Alle 14 Farbwelten als ZIP (Navy, Salbei, Bordeaux, Tannengrün, Petrol, Schiefer, Pflaume, Terrakotta, Ozeanblau, Mokka, Olive, Anthrazit, Beere, Rauchblau)</li>
             <li>Updates kostenlos im Download-Bereich</li>
           </ul>
-          <div class="actions">{shop_button("Notfallordner auf Etsy ansehen")}</div>
+          <div class="actions">{shop_button("Notfallordner auf Etsy ansehen", url=ETSY_NOTFALL)}</div>
         </div>
       </div>
     </article>
@@ -301,7 +304,7 @@ produkte_body = f"""
         </figure>
         <div>
           <h2 style="font-size:2rem">Pflegeordner für Angehörige</h2>
-          <p class="price">12,90 € <s>14,90 €</s><small>Einführungspreis bis zu den ersten Bewertungen · 44 Seiten · A4 · PDF · Deutsch · Beträge Stand 01/2026</small></p>
+          <p class="price">15,35 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 44 Seiten · A4 · PDF · Deutsch · Beträge Stand 01/2026</small></p>
           <p>Wenn Mutter oder Vater plötzlich Hilfe brauchen, kommt alles gleichzeitig: Antrag bei der Pflegekasse, Begutachtung, Leistungen, Pflegedienst, Familie, Beruf. Dieser Ordner bringt Ordnung in die ersten Wochen – und bleibt danach das Nachschlagewerk für alle, die mithelfen.</p>
           <h3>Das ist enthalten</h3>
           {pflege_reg}
@@ -312,7 +315,7 @@ produkte_body = f"""
             <li>Alle 14 Farbwelten als ZIP (Navy, Salbei, Bordeaux, Tannengrün, Petrol, Schiefer, Pflaume, Terrakotta, Ozeanblau, Mokka, Olive, Anthrazit, Beere, Rauchblau)</li>
             <li>Alle Beträge und Fristen mit Stand 01/2026 und Quelle; Updates kostenlos</li>
           </ul>
-          <div class="actions">{shop_button("Pflegeordner auf Etsy ansehen")}</div>
+          <div class="actions">{shop_button("Pflegeordner auf Etsy ansehen", url=ETSY_PFLEGE)}</div>
         </div>
       </div>
     </article>
@@ -330,7 +333,7 @@ produkte_body = f"""
         </figure>
         <div>
           <h2 style="font-size:2rem">Rentenordner</h2>
-          <p class="price">9,90 € <s>14,90 €</s><small>Einführungspreis bis zu den ersten Bewertungen · 37 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
+          <p class="price">11,78 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 37 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
           <p>Rentenkonto klären, Nachweise suchen, Rentenart wählen, Antrag stellen, Bescheid prüfen, Arbeitgeber und Versicherungen regeln – der Weg in die Rente dauert etwa zwei Jahre und besteht aus vielen kleinen Schritten. Der Rentenordner hält alle an einem Ort fest: mit Fahrplan, Checklisten und Platz für deine Zahlen. Er rechnet nicht und berät nicht – er sorgt dafür, dass du vorbereitet bist, wenn du mit der Rentenversicherung sprichst.</p>
           <h3>Das ist enthalten</h3>
           {rente_reg}
@@ -341,7 +344,7 @@ produkte_body = f"""
             <li>Alle 14 Farbwelten als ZIP (Navy, Salbei, Bordeaux, Tannengrün, Petrol, Schiefer, Pflaume, Terrakotta, Ozeanblau, Mokka, Olive, Anthrazit, Beere, Rauchblau)</li>
             <li>Altersgrenzen, Fristen und Beträge mit Stand {STAND} und Quelle (SGB VI, EStG, Deutsche Rentenversicherung); Updates kostenlos</li>
           </ul>
-          <div class="actions">{shop_button("Rentenordner auf Etsy ansehen")}</div>
+          <div class="actions">{shop_button("Rentenordner auf Etsy ansehen", url=ETSY_RENTE)}</div>
         </div>
       </div>
     </article>
@@ -350,7 +353,7 @@ produkte_body = f"""
     <div class="grid grid--2">
       <div>
         <h2>Name auf dem Deckblatt</h2>
-        <p>Jeden Ordner gibt es auch personalisiert: mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt, in der Farbwelt deiner Wahl. 29,90 € je Ordner, als eigenes Angebot im Shop.</p>
+        <p>Jeden Ordner gibt es auch personalisiert: mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt, in der Farbwelt deiner Wahl. Dieses Angebot folgt in Kürze im Shop.</p>
         <h2 style="margin-top:32px">Besondere Situation? Schreib uns.</h2>
         <p>Patchwork-Familie, eigener Betrieb, Haus im Ausland, Pflege durch mehrere Angehörige – wenn dein Fall nicht ins Raster passt, stellen wir dir den Ordner aus allen vorhandenen Seiten passend zusammen: eigene Rubriken, angepasste Bezeichnungen, dein Name, deine Farbe. Ab 49 € inklusive einer Korrekturrunde, fertig in drei Werktagen. Schreib kurz, worum es geht, an <a href="mailto:{MAIL_SHOP}?subject=Besondere%20Situation">{MAIL_SHOP}</a> – du bekommst einen Festpreis, bevor du etwas kaufst.</p>
       </div>
@@ -360,7 +363,7 @@ produkte_body = f"""
       </div>
     </div>
     <div class="note">
-      <p>Die Vorlagen dienen der Dokumentation und Organisation. Sie ersetzen keine Rechts-, Steuer- oder medizinische Beratung. Fristen und Zuständigkeiten bitte mit der zuständigen Stelle abgleichen. Lizenz für den privaten Gebrauch; Weitergabe und Weiterverkauf sind nicht gestattet. Preise sind Endpreise; Kleinunternehmer nach § 19 UStG, bei Sofort-Downloads erhebt Etsy die Umsatzsteuer.</p>
+      <p>Die Vorlagen dienen der Dokumentation und Organisation. Sie ersetzen keine Rechts-, Steuer- oder medizinische Beratung. Fristen und Zuständigkeiten bitte mit der zuständigen Stelle abgleichen. Lizenz für den privaten Gebrauch; Weitergabe und Weiterverkauf sind nicht gestattet. Die Preise auf dieser Seite sind Endpreise bei Lieferung nach Deutschland (Stand 11/2026); maßgeblich ist der Preis, den Etsy dir anzeigt. Kleinunternehmer nach § 19 UStG, bei Sofort-Downloads erhebt Etsy die Umsatzsteuer des Käuferlandes.</p>
     </div>
   </div>
 </section>
@@ -456,8 +459,8 @@ kontakt_body = f"""
         <p>Für Fragen zu Produkten, Dateien und Bestellungen. Antwort in der Regel innerhalb von zwei Werktagen. Käufer erreichen uns auch direkt über die Nachrichtenfunktion bei Etsy.</p>
         <p class="mb-0"><a class="btn btn--primary" href="mailto:{MAIL_SHOP}?subject=Frage%20zu%20Kompassordner">E-Mail schreiben</a></p>
       </div>
-      <h2 id="start" style="margin-top:48px">Bescheid bekommen, wenn der Shop öffnet</h2>
-      <p>Der Etsy-Shop öffnet in Kürze. Wenn du eine kurze Nachricht an <a href="mailto:{MAIL_SHOP}?subject=Bescheid%20geben%2C%20wenn%20der%20Shop%20%C3%B6ffnet">{MAIL_SHOP}</a> schickst, melden wir uns einmal, sobald die Ordner verfügbar sind – keine weiteren Mails, kein Newsletter. Oder folge <a href="{PINTEREST}" rel="noopener">Kompassordner auf Pinterest</a>.</p>
+      <h2 id="start" style="margin-top:48px">Wo es die Ordner gibt</h2>
+      <p>Die Ordner gibt es im <a href="{ETSY}" rel="noopener">Etsy-Shop Kompassordner</a>. Neue Ordner kündigen wir auf <a href="{PINTEREST}" rel="noopener">Pinterest</a> an – kein Newsletter.</p>
       <h2 style="margin-top:48px">Besondere Situation?</h2>
       <p>Wenn dein Fall nicht ins Raster passt, stellen wir dir einen Ordner aus allen vorhandenen Seiten passend zusammen – eigene Rubriken, angepasste Bezeichnungen, dein Name, deine Farbe. Ab 49 € inklusive einer Korrekturrunde, fertig in drei Werktagen. Schreib kurz, worum es geht, an <a href="mailto:{MAIL_SHOP}?subject=Besondere%20Situation">{MAIL_SHOP}</a>; du bekommst einen Festpreis, bevor du etwas kaufst. Keine Rechtstexte – wir ordnen, wir beraten nicht.</p>
       <h2 style="margin-top:48px">Firmenlizenzen</h2>
@@ -550,12 +553,12 @@ widerruf_body = f"""
 <section class="section">
   <div class="wrap prose">
     <h1>Widerrufsbelehrung und AGB</h1>
-    <p class="lead">Unsere Produkte werden über Etsy verkauft. Diese Texte gelten für Käufe im Etsy-Shop „Kompassordner“ und sind dort ebenfalls hinterlegt. Stand: 07.11.2026.</p>
+    <p class="lead">Unsere Produkte werden über Etsy verkauft. Diese Texte gelten für Käufe im Etsy-Shop „Kompassordner“ und sind dort ebenfalls hinterlegt. Stand: 10.11.2026.</p>
 
     <h2 id="widerruf">Widerrufsbelehrung für digitale Inhalte</h2>
     <h3>Widerrufsrecht</h3>
     <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
-    <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Tobias Freudenau, Kompassordner, Hauptstraße 5, 04435 Schkeuditz, E-Mail {MAIL_POST}) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+    <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Tobias Freudenau, Kompassordner, Hauptstraße 5, 04435 Schkeuditz, E-Mail {MAIL_POST}) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Sie können Ihren Widerruf auch online über die elektronische Widerrufsfunktion von Etsy erklären: Melden Sie sich bei Etsy an, öffnen Sie unter „Käufe und Bewertungen“ die betreffende Bestellung und wählen Sie dort die Funktion zum Widerruf des Vertrags. Machen Sie von dieser Möglichkeit Gebrauch, erhalten Sie unverzüglich auf einem dauerhaften Datenträger (z. B. per E-Mail) eine Bestätigung über den Eingang Ihres Widerrufs. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
     <h3>Folgen des Widerrufs</h3>
     <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
     <h3>Vorzeitiges Erlöschen des Widerrufsrechts</h3>
