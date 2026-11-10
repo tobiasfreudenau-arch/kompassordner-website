@@ -8,6 +8,7 @@ ETSY = "https://www.etsy.com/de/shop/Kompassordner"
 ETSY_NOTFALL = "https://www.etsy.com/de/listing/4613325128"
 ETSY_PFLEGE = "https://www.etsy.com/de/listing/4613311315"
 ETSY_RENTE = "https://www.etsy.com/de/listing/4613313489"
+ETSY_SET = "https://www.etsy.com/de/listing/4614113073"
 PINTEREST = "https://www.pinterest.com/kompassordner"
 MAIL_SHOP = "shop@kompassordner.de"
 MAIL_POST = "post@kompassordner.de"
@@ -157,21 +158,22 @@ index_body = f"""
         <a class="shelf" style="display:block;max-width:420px" href="produkte.html#notfallordner" aria-label="Zum Notfall- und Vorsorgeordner"><img class="doc" src="assets/img/notfall-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Notfall- und Vorsorgeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#notfallordner">Notfall- und Vorsorgeordner</a></h3>
         <p>36 Seiten in 9 Teilen: Notfallblatt, Vollmachten, Finanzen, Verträge, digitaler Nachlass, Checklisten für den Todesfall, persönliche Botschaft.</p>
-        <p class="tnum"><strong>23,68 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
+        <p class="tnum"><strong>19,90 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
       </article>
       <article>
         <a class="shelf" style="display:block;max-width:420px" href="produkte.html#pflegeordner" aria-label="Zum Pflegeordner"><img class="doc" src="assets/img/pflege-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Pflegeordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#pflegeordner">Pflegeordner für Angehörige</a></h3>
         <p>44 Seiten in 8 Teilen: Pflegegrad beantragen, Pflegetagebuch, Leistungen der Pflegekasse 2026, Wochenplan, Übergabeblatt, Protokolle, Finanzen.</p>
-        <p class="tnum"><strong>15,35 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
+        <p class="tnum"><strong>12,90 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
       </article>
       <article>
         <a class="shelf" style="display:block;max-width:420px" href="produkte.html#rentenordner" aria-label="Zum Rentenordner"><img class="doc" src="assets/img/rente-cover.webp?v={ASSET_V}" alt="Deckblatt „Mein Rentenordner“" width="910" height="1287" loading="lazy" style="max-width:340px;margin-inline:auto"></a>
         <h3 style="margin-top:24px"><a href="produkte.html#rentenordner">Rentenordner</a></h3>
         <p>37 Seiten in 6 Teilen: Fahrplan 24 Monate vor dem Rentenbeginn, Rentenkonto klären, Rentenart und Zeitpunkt wählen, Antrag, Bescheid prüfen, Budget, Glossar.</p>
-        <p class="tnum"><strong>11,78 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
+        <p class="tnum"><strong>9,90 €</strong> <span class="soft">Einführungspreis · inkl. USt. bei Lieferung nach Deutschland</span></p>
       </article>
     </div>
+    <p style="margin-top:32px"><strong>Alle drei im Set:</strong> 34,90 € statt 42,70 € einzeln (inkl. USt. bei Lieferung nach Deutschland, Stand 11/2026). {shop_button("Set auf Etsy ansehen", cls="btn", url=ETSY_SET)}</p>
   </div>
 </section>
 
@@ -275,7 +277,7 @@ produkte_body = f"""
         </figure>
         <div>
           <h2 style="font-size:2rem">Notfall- und Vorsorgeordner</h2>
-          <p class="price">23,68 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 36 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
+          <p class="price">19,90 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 36 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
           <p>Wenn etwas passiert, suchen Angehörige als Erstes: Wen rufe ich an? Welche Medikamente? Wo liegt die Vollmacht? Welche Verträge laufen? Dieser Ordner beantwortet das auf 36 Seiten – an einem Ort, ohne Suchen.</p>
           <h3>Das ist enthalten</h3>
           {notfall_reg}
@@ -304,7 +306,7 @@ produkte_body = f"""
         </figure>
         <div>
           <h2 style="font-size:2rem">Pflegeordner für Angehörige</h2>
-          <p class="price">15,35 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 44 Seiten · A4 · PDF · Deutsch · Beträge Stand 01/2026</small></p>
+          <p class="price">12,90 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 44 Seiten · A4 · PDF · Deutsch · Beträge Stand 01/2026</small></p>
           <p>Wenn Mutter oder Vater plötzlich Hilfe brauchen, kommt alles gleichzeitig: Antrag bei der Pflegekasse, Begutachtung, Leistungen, Pflegedienst, Familie, Beruf. Dieser Ordner bringt Ordnung in die ersten Wochen – und bleibt danach das Nachschlagewerk für alle, die mithelfen.</p>
           <h3>Das ist enthalten</h3>
           {pflege_reg}
@@ -333,7 +335,7 @@ produkte_body = f"""
         </figure>
         <div>
           <h2 style="font-size:2rem">Rentenordner</h2>
-          <p class="price">11,78 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 37 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
+          <p class="price">9,90 €<small>Einführungspreis, inkl. USt. bei Lieferung nach Deutschland · 37 Seiten · A4 · PDF · Deutsch · Stand {STAND}</small></p>
           <p>Rentenkonto klären, Nachweise suchen, Rentenart wählen, Antrag stellen, Bescheid prüfen, Arbeitgeber und Versicherungen regeln – der Weg in die Rente dauert etwa zwei Jahre und besteht aus vielen kleinen Schritten. Der Rentenordner hält alle an einem Ort fest: mit Fahrplan, Checklisten und Platz für deine Zahlen. Er rechnet nicht und berät nicht – er sorgt dafür, dass du vorbereitet bist, wenn du mit der Rentenversicherung sprichst.</p>
           <h3>Das ist enthalten</h3>
           {rente_reg}
