@@ -9,6 +9,7 @@ ETSY_NOTFALL = "https://www.etsy.com/de/listing/4613325128"
 ETSY_PFLEGE = "https://www.etsy.com/de/listing/4613311315"
 ETSY_RENTE = "https://www.etsy.com/de/listing/4613313489"
 ETSY_SET = "https://www.etsy.com/de/listing/4614113073"
+ETSY_PERS = "https://www.etsy.com/de/listing/4615645726"
 PINTEREST = "https://www.pinterest.com/kompassordner"
 MAIL_SHOP = "shop@kompassordner.de"
 MAIL_POST = "post@kompassordner.de"
@@ -355,7 +356,8 @@ produkte_body = f"""
     <div class="grid grid--2">
       <div>
         <h2>Name auf dem Deckblatt</h2>
-        <p>Jeden Ordner gibt es auch personalisiert: mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt, in der Farbwelt deiner Wahl. Dieses Angebot folgt in Kürze im Shop.</p>
+        <p>Den Notfallordner gibt es auch personalisiert: mit deinem Namen oder dem Namen deiner Eltern auf dem Deckblatt, in jeder Wunschfarbe – du gibst beim Kauf einfach den Farbcode an (z. B. #2E7D6B) oder wählst eine der 14 Farbwelten. Wir fertigen ihn innerhalb von einem Werktag an, 29,90 € (Stand 11/2026). Pflege- und Rentenordner mit Namen auf Anfrage.</p>
+        <p>{shop_button("Notfallordner mit Namen ansehen", cls="btn", url=ETSY_PERS)}</p>
         <h2 style="margin-top:32px">Besondere Situation? Schreib uns.</h2>
         <p>Patchwork-Familie, eigener Betrieb, Haus im Ausland, Pflege durch mehrere Angehörige – wenn dein Fall nicht ins Raster passt, stellen wir dir den Ordner aus allen vorhandenen Seiten passend zusammen: eigene Rubriken, angepasste Bezeichnungen, dein Name, deine Farbe. Ab 49 € inklusive einer Korrekturrunde, fertig in drei Werktagen. Schreib kurz, worum es geht, an <a href="mailto:{MAIL_SHOP}?subject=Besondere%20Situation">{MAIL_SHOP}</a> – du bekommst einen Festpreis, bevor du etwas kaufst.</p>
       </div>
@@ -397,7 +399,7 @@ sfe_body = f"""
       <details><summary>Was passiert, wenn sich Fristen oder Beträge ändern?</summary><p>Jede Angabe trägt „Stand MM/JJJJ“. Ändert sich etwas, aktualisieren wir die Datei, und du lädst die neue Fassung kostenlos in deinem Etsy-Download-Bereich herunter.</p></details>
       <details><summary>Stehen in dem Ordner Passwörter oder Kontonummern?</summary><p>Nein, und das ist Absicht. Im Ordner steht nur, <em>wo</em> Zugänge und Unterlagen hinterlegt sind (zum Beispiel „Passwortliste im Safe“) – nie die Zugänge selbst. So kann der Ordner offen im Regal stehen.</p></details>
       <details><summary>Ist das Rechtsberatung?</summary><p>Nein. Die Ordner helfen beim Sammeln, Ordnen und Vorbereiten. Für Vollmachten, Verfügungen, Testament oder Widersprüche sind Notar, Anwältin, Pflegestützpunkt oder Verbraucherzentrale die richtigen Stellen – der Ordner macht diese Gespräche leichter.</p></details>
-      <details><summary>Kann ich den Ordner verschenken?</summary><p>Ja. Viele Käufer füllen ihn gemeinsam mit den Eltern aus oder verschenken ihn zum Ruhestand. Wenn das Deckblatt einen Namen tragen soll, gibt es die personalisierte Fassung.</p></details>
+      <details><summary>Kann ich den Ordner verschenken?</summary><p>Ja. Viele Käufer füllen ihn gemeinsam mit den Eltern aus oder verschenken ihn zum Ruhestand. Wenn das Deckblatt einen Namen tragen soll, gibt es den Notfallordner als personalisierte Fassung in jeder Wunschfarbe (29,90 €).</p></details>
       <details><summary>Wie bekomme ich Hilfe, wenn etwas nicht klappt?</summary><p>Schreib an <a href="mailto:{MAIL_SHOP}">{MAIL_SHOP}</a> oder über Etsy. Lässt sich eine Datei nicht öffnen oder fehlt eine Seite, bekommst du schnell eine funktionierende Fassung.</p></details>
     </div>
   </div>
@@ -564,7 +566,7 @@ widerruf_body = f"""
     <h3>Folgen des Widerrufs</h3>
     <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
     <h3>Vorzeitiges Erlöschen des Widerrufsrechts</h3>
-    <p>Bei einem Vertrag über die Lieferung von nicht auf einem körperlichen Datenträger befindlichen digitalen Inhalten erlischt das Widerrufsrecht gemäß § 356 Abs. 5 BGB, wenn wir mit der Ausführung des Vertrags begonnen haben, nachdem Sie ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist mit der Ausführung beginnen, und Sie Ihre Kenntnis davon bestätigt haben, dass Sie durch Ihre Zustimmung mit Beginn der Ausführung Ihr Widerrufsrecht verlieren. Die Zustimmung und Bestätigung erfolgen über die von Etsy vor Abschluss der Bestellung bereitgestellte Checkbox. Wir bestätigen Ihnen das Erlöschen in der Bestellbestätigung.</p>
+    <p>Bei einem Vertrag über die Lieferung von nicht auf einem körperlichen Datenträger befindlichen digitalen Inhalten erlischt das Widerrufsrecht gemäß § 356 Abs. 5 BGB, wenn wir mit der Ausführung des Vertrags begonnen haben, nachdem Sie ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist mit der Ausführung beginnen, und Sie Ihre Kenntnis davon bestätigt haben, dass Sie durch Ihre Zustimmung mit Beginn der Ausführung Ihr Widerrufsrecht verlieren. Die Zustimmung und Bestätigung erfolgen über die von Etsy vor Abschluss der Bestellung bereitgestellte Checkbox. Wir bestätigen Ihnen das Erlöschen in der Bestellbestätigung. Bei personalisierten Ordnern, die erst nach der Bestellung nach Ihren Angaben angefertigt werden (Download auf Bestellung), erteilen Sie Zustimmung und Bestätigung vor Abschluss der Bestellung zusätzlich über das Pflichtfeld „Sofort anfertigen? Bitte „Ja“ eintragen“. Mit der Anfertigung beginnen wir erst, wenn dort „Ja“ eingetragen ist; andernfalls fragen wir vorher nach. Das Erlöschen bestätigen wir Ihnen in unserer Nachricht zur Lieferung.</p>
     <h3>Muster-Widerrufsformular</h3>
     <p>(Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
     <p>An: Tobias Freudenau, Kompassordner, Hauptstraße 5, 04435 Schkeuditz, {MAIL_POST}<br>
